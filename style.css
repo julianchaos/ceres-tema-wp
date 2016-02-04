@@ -1,0 +1,19 @@
+/*
+Theme Name: Ceres
+Theme URI: http://ceres.iesp.uerj.br/
+Author: Julian Andrade
+Author URI: http://www.ndrade.com.br/
+Description: Tema para o site Ceres
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: ceres
+*/
+
+body, html {
+    margin: 0;
+    padding: 0;
+}
+header {
+    background-color:  rgba(33, 63, 29, 0.8);
+}

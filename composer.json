@@ -1,0 +1,13 @@
+{
+    "name": "ndrade/ceres",
+    "description": "",
+    "authors": [
+        {
+            "name": "Julian Andrade",
+            "email": "julian@ndrade.com.br"
+        }
+    ],
+    "require": {
+        "twitter/bootstrap": "dev-master"
+    }
+}

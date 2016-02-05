@@ -10,6 +10,9 @@ add_action( 'after_setup_theme', 'register_my_menu' );
 function ceres_scripts_styles() {
 	$templateDirectory = get_template_directory_uri();
 	
+	//Ceres
+	wp_enqueue_style( 'ceres-style', $templateDirectory . '/css/style.css');
+	
 	//jQuery
 	wp_enqueue_script( 'jquery');
 	
@@ -22,7 +25,7 @@ function ceres_scripts_styles() {
 	 */
 	$bootstrapDistDirectory = $templateDirectory . "/vendor/twitter/bootstrap/dist";
 	wp_enqueue_script( 'ceres-bootstrap', $bootstrapDistDirectory . "/js/bootstrap.min.js" , array('jquery'), '3.3.6', false);
-	wp_enqueue_style( 'ceres-bootstrap', $bootstrapDistDirectory . "/css/bootstrap.min.css" , array(), '3.3.6');
+	
 }
 add_action( 'wp_enqueue_scripts', 'ceres_scripts_styles' );
 

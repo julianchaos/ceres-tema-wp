@@ -121,12 +121,14 @@ header #s:-ms-input-placeholder {
 	header .navbar-container {
 		background-color: transparent;
 	}
-	header .navbar-header {
-		float: right;
-	}
 }
-@media (min-width: 992px) {
-	header .navbar-collapse {
-		padding: 0;
+header {
+	@media (min-width: 992px) {
+		.navbar-header {
+			float: right;
+		}
+		.navbar-collapse {
+			padding: 0;
+		}
 	}
 }

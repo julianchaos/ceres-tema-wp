@@ -18,6 +18,7 @@ function ceres_scripts_styles() {
 	
 	//Google Fonts
 	wp_enqueue_style( 'google-oswald', 'https://fonts.googleapis.com/css?family=Oswald:400,300');
+	wp_enqueue_style( 'google-opensans', 'https://fonts.googleapis.com/css?family=Open+Sans');
 	
 	/*
 	 * Bootstrap

@@ -14,7 +14,7 @@
 						<h3>Newsletter</h3>
 						<div id="footer-newsletter">
 							<p>Cadastre seu e-mail para receber informativos do CERES.</p>
-							<?php echo do_shortcode('[contact-form-7 id="10" title="Newsletter"]') ?>
+							<?php echo do_shortcode('[print_footer_newsletter_form]') ?>
 						</div>
 					</div>
 					<div class="col-xs-12 col-sm-4">

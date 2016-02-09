@@ -1,4 +1,17 @@
+<?php require_once 'inc/shortcodes/shortcodes.init.php' ?>
 <?php
+function arphabet_widgets_init() {
+
+	register_sidebar( array(
+		'name'          => 'Footer Newsletter',
+		'id'            => 'footer_newsletter',
+		'before_widget' => '<div>',
+		'after_widget'  => '</div>'
+	));
+
+}
+add_action( 'widgets_init', 'arphabet_widgets_init' );
+
 function register_my_menu() {
 	register_nav_menu( 'primary', 'Menu do cabeçalho' );
 

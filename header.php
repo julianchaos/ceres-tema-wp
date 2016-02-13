@@ -45,7 +45,7 @@ $menu = wp_nav_menu(array(
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>
-							<button type="button" class="navbar-toggle navbar-toogle-text" data-toggle="collapse" data-target=".navbar-collapse">
+							<button type="button" class="navbar-toggle navbar-toggle-text" data-toggle="collapse" data-target=".navbar-collapse">
 								Menu
 							</button>
 							<?php get_search_form() ?>

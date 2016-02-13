@@ -1,134 +1,151 @@
 header {
     background-color: rgba(33, 63, 29, 0.8);
 	padding-top: 15px;
-	
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1;
+
 	.logo-iesp {
 		float: right;
-		
+
 		img {
 			max-width: 115px;
+			
+			@media (min-width: @screen-sm) {
+				max-width: 170px;
+			}
 		}
 	}
-	
+
 	.logo-ceres {
 		clear: both;
 		display: block;
 		margin: 0 auto 15px;
 		width: 290px;
-	}
-}
-
-header .navbar-container {
-	background-color:  #213f1d;
-}
-header .navbar {
-	border-width: 0;
-	margin: 0;
-}
-
-header .navbar-toggle {
-	border-width: 0;
-	float: left;
-	padding-left: 0;
-	padding-right: 15px;
-	margin-right: 0;
-}
-header .navbar-toggle .icon-bar { 
-	background-color: #FFF;
-}
-header .navbar-toogle-text {
-	color: #ffffff;
-	font-family: 'Oswald';
-	font-size: 16px; /* Aproximação devido à substituição de fonte */
-	font-weight: 300;
-	line-height: 48px; /* Aproximação devido à substituição de fonte */
-	margin: 0;
-	padding: 0;
-	text-align: left;
-	text-transform: uppercase;
-}
-header .navbar-nav li a {
-	font-family: 'Oswald';
-	color: #ffffff;
-	font-size: 16px; /* Aproximação devido à substituição de fonte */
-	font-weight: 300;
-	line-height: 52px; /* Aproximação devido à substituição de fonte */
-	text-align: left;
-	text-transform: uppercase;
-	padding-top: 0;
-	padding-bottom: 0;
-}
-
-header .searchform {
-	float: right;
-}
-header .searchform .screen-reader-text {
-	display: none;
-}
-header #s {
-	background-color: transparent;
-	border-width: 0;
-	border-right: 1px solid #FFF;
-	color: #FFF;
-	float: right;
-	font-family: 'Oswald';
-	font-size: 16px;
-	font-weight: 300;
-	height: 18px;
-	line-height: 17px;
-	margin-top: 14px;
-	margin-right: 10px;
-	width: 55px;
-	
-}
-header .searchsubmit {
-	background: transparent url(../images/general/search.png) no-repeat 50% 50%;
-	border: 0;
-	float: right;
-	padding: 0;
-	width: 25px;
-	height: 48px;
-}
-header #s::-webkit-input-placeholder {
-   color: #FFF;
-   text-transform: uppercase;
-}
-
-header #s:-moz-placeholder {
-   color: #FFF;
-   text-transform: uppercase;
-}
-
-header #s::-moz-placeholder {
-   color: #FFF;
-   text-transform: uppercase;
-}
-
-header #s:-ms-input-placeholder {  
-   color: #FFF;
-   text-transform: uppercase;
-}
-
-@media (min-width: @screen-sm) {
-	header .logo-iesp img {
-		max-width: 170px;
-	}
-	header .logo-ceres {
-		clear: none;
-		width: auto;
-	}
-	
-	header .navbar-container {
-		background-color: transparent;
-	}
-}
-header {
-	@media (min-width: 992px) {
-		.navbar-header {
-			float: right;
+		
+		@media (min-width: @screen-sm) {
+			clear: none;
+			width: auto;
 		}
-		.navbar-collapse {
-			padding: 0;
+	}
+	
+	.navbar-container {
+		background-color:  #213f1d;
+		
+		@media (min-width: @screen-sm) {
+			background-color: transparent;
+		}
+		
+		.navbar {
+			border-width: 0;
+			margin: 0;
+			
+			.navbar-header {
+				@media (min-width: @screen-md) {
+					float: right;
+				}
+				
+				.navbar-toggle {
+					border-width: 0;
+					float: left;
+					padding-left: 0;
+					padding-right: 15px;
+					margin-right: 0;
+					
+					.icon-bar { 
+						background-color: #FFF;
+					}
+					&-text {
+						color: #ffffff;
+						font-family: 'Oswald';
+						font-size: 16px; /* Aproximação devido à substituição de fonte */
+						font-weight: 300;
+						line-height: 48px; /* Aproximação devido à substituição de fonte */
+						margin: 0;
+						padding: 0;
+						text-align: left;
+						text-transform: uppercase;
+					}
+				}
+				
+				.searchform {
+					float: right;
+					
+					.screen-reader-text {
+						display: none;
+					}
+					.searchsubmit {
+						background: transparent url(../images/general/search.png) no-repeat 50% 50%;
+						border: 0;
+						float: right;
+						padding: 0;
+						width: 25px;
+						height: 48px;
+					}
+					#s {
+						background-color: transparent;
+						border-width: 0;
+						border-right: 1px solid #FFF;
+						color: #FFF;
+						float: right;
+						font-family: 'Oswald';
+						font-size: 16px;
+						font-weight: 300;
+						height: 18px;
+						line-height: 17px;
+						margin-top: 14px;
+						margin-right: 10px;
+						width: 55px;
+
+						.placeholder() {
+							color: #FFF;
+							text-transform: uppercase;
+						}
+
+						&::-webkit-input-placeholder {
+							.placeholder;
+						}
+						&:-moz-placeholder {
+							.placeholder;
+						}
+						&::-moz-placeholder {
+							.placeholder;
+						}
+						&:-ms-input-placeholder {  
+							.placeholder;
+						}
+					}
+				}	
+		}
+
+			.navbar-collapse {
+				@media (min-width: @screen-md) {
+					padding: 0;
+				}
+				
+				.navbar-nav li a {
+					font-family: 'Oswald';
+					color: #ffffff;
+					font-size: 16px; /* Aproximação devido à substituição de fonte */
+					font-weight: 300;
+					line-height: 52px; /* Aproximação devido à substituição de fonte */
+					text-align: left;
+					text-transform: uppercase;
+					padding-top: 0;
+					padding-bottom: 0;
+				}
+			}
+		}
+
+	}
+
+	+ section {
+		margin-top: 215px;
+		
+		@media (min-width: @screen-sm) {
+			margin-top: 81px;
 		}
 	}
 }

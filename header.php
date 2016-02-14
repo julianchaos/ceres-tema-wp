@@ -1,7 +1,7 @@
 <?php
 $menu = wp_nav_menu(array(
 	'menu' => 'primary',
-	'depth' => 1,
+	'depth' => 2,
 	'container' => false,
 	'menu_class' => 'nav navbar-nav',
 	//process nav menu using our custom nav walker

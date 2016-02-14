@@ -1,3 +1,10 @@
+.admin-bar header {
+	top: 46px;
+
+	@media (min-width: 783px) {
+		top: 32px;
+	}
+}
 header {
     background-color: rgba(33, 63, 29, 0.8);
 	padding-top: 15px;
@@ -12,7 +19,7 @@ header {
 
 		img {
 			max-width: 115px;
-			
+
 			@media (min-width: @screen-sm) {
 				max-width: 170px;
 			}
@@ -24,36 +31,37 @@ header {
 		display: block;
 		margin: 0 auto 15px;
 		width: 290px;
-		
+
 		@media (min-width: @screen-sm) {
 			clear: none;
 			width: auto;
 		}
 	}
-	
+
 	.navbar-container {
-		background-color:  #213f1d;
-		
+		background-color: rgba(33, 63, 29, 0.8);
+
+
 		@media (min-width: @screen-sm) {
 			background-color: transparent;
 		}
-		
+
 		.navbar {
 			border-width: 0;
 			margin: 0;
-			
+
 			.navbar-header {
 				@media (min-width: @screen-md) {
 					float: right;
 				}
-				
+
 				.navbar-toggle {
 					border-width: 0;
 					float: left;
 					padding-left: 0;
 					padding-right: 15px;
 					margin-right: 0;
-					
+
 					.icon-bar { 
 						background-color: #FFF;
 					}
@@ -69,10 +77,10 @@ header {
 						text-transform: uppercase;
 					}
 				}
-				
+
 				.searchform {
 					float: right;
-					
+
 					.screen-reader-text {
 						display: none;
 					}
@@ -118,32 +126,80 @@ header {
 						}
 					}
 				}	
-		}
+			}
 
 			.navbar-collapse {
+				
 				@media (min-width: @screen-md) {
 					padding: 0;
 				}
-				
+
 				.navbar-nav li a {
 					font-family: 'Oswald';
 					color: #ffffff;
-					font-size: 16px; /* Aproximação devido à substituição de fonte */
+					font-size: 16px;  //Aproximação devido à substituição de fonte 
 					font-weight: 300;
-					line-height: 52px; /* Aproximação devido à substituição de fonte */
 					text-align: left;
 					text-transform: uppercase;
-					padding-top: 0;
-					padding-bottom: 0;
+				}
+
+				.caret {
+					display: none;
+				}
+				
+				@media (max-width: @grid-float-breakpoint-max) {
+					.navbar-nav li {
+						a {
+							padding: 16px 0;
+						}
+						&.dropdown a {
+							padding-bottom: 10px;
+						}
+					}
+					
+					.dropdown-menu {
+						padding-top: 0;
+						
+						display: block;
+						
+						position: static;
+						float: none;
+						width: auto;
+						margin-top: 0;
+						background-color: transparent;
+						border: 0;
+						box-shadow: none;
+						
+						li a {
+							padding: 12px 0 12px 25px;
+						}
+					}
+				}
+				
+				@media (min-width: @screen-md) {
+					.dropdown-menu {
+						background-color:  rgba(0, 0, 0, 0.8);
+						border-top-width: 0;
+						
+						li {
+							a {
+								line-height: 48px;
+							}
+							
+							+ li {
+								border-top: 2px solid #898989;
+							}
+						}
+					}
+					
 				}
 			}
 		}
-
 	}
 
 	+ section {
 		margin-top: 215px;
-		
+
 		@media (min-width: @screen-sm) {
 			margin-top: 81px;
 		}

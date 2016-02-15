@@ -2,7 +2,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12 col-sm-4">
-						<h3>Categorias</h3>
+						<h4>Categorias</h4>
 						<div id="footer-categorias">
 							<p><a href="javascript: void(0)">Notícias</a><a href="javascript: void(0)">20</a></p>
 							<p><a href="javascript: void(0)">Projetos</a><a href="javascript: void(0)">20</a></p>
@@ -11,7 +11,7 @@
 						</div>
 					</div>
 					<div class="col-xs-12 col-sm-4">
-						<h3>Newsletter</h3>
+						<h4>Newsletter</h4>
 						<div id="footer-newsletter">
 							<p>Cadastre seu e-mail para receber informativos do CERES.</p>
 							<?php echo do_shortcode('[print_footer_newsletter_form]') ?>

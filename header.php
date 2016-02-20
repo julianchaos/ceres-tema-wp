@@ -28,7 +28,7 @@ $menu = wp_nav_menu(array(
 						<a href="javascript: void(0)" class="logo-iesp">
 							<img src="<?php bloginfo('template_directory') ?>/images/general/IESP-logo.png" alt="IESP" />
 						</a>
-						<a href="<?php esc_url(home_url()) ?>" class="logo-ceres">
+						<a href="<?php echo get_site_url(); ?>" class="logo-ceres">
 							<img src="<?php bloginfo('template_directory') ?>/images/general/CERES-logo-mobile.png" class="visible-xs" alt="CERES" />
 							<img src="<?php bloginfo('template_directory') ?>/images/general/CERES-logo-tablets.png" class="hidden-xs" alt="CERES" />
 						</a>

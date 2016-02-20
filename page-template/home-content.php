@@ -1,3 +1,35 @@
+<?php
+$args = array(
+	'post_type' => 'post',
+	'post_status' => 'publish',
+	'posts_per_page' => 2,
+	'meta_query' => array(array('key' => '_thumbnail_id')) 
+);
+$query = new WP_Query($args);
+
+$noticia = null;
+if($query->have_posts())
+{
+	$noticia = array();
+	while($query->have_posts())
+	{
+		$query->the_post();
+		$categories = get_the_category();
+		$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'noticia-thumbnail' )[0];
+
+		$noticia[] = array(
+			'title' => get_the_title(),
+			'date' => get_the_date('j \d\e F \d\e Y'),
+			'category' => $categories[0]->name,
+			'thumbnail' => $thumb,
+			'content' => get_the_excerpt(),
+			'link' => get_permalink()
+		);
+	}
+}
+wp_reset_postdata();
+
+?>
 <section id="home-content">
 	<div class="container">
 		<div class="row">
@@ -12,19 +44,18 @@
 					<div class="col-xs-12">
 						<h1 class="separator-top">Conheça também</h1>
 					</div>
-					<div class="col-xs-12 col-sm-6 noticia">
-						<img src="<?php bloginfo('template_directory') ?>/images/home/foto-noticia.png" alt="Notícia" class="img-responsive center-block" />
-						<h4>Nullam non efficitur erat. Cras non nisi vitae ante ornare suscipit.</h4>
-						<p><small class="orange">11 de outubro de 2015 | <span class="orange dark">Projetos</span></small></p>
-						<p>Fusce venenatis venenatis vestibulum. Donec eu molestie enim. Nullam non efficitur erat. Cras non nisi vitae ante ornare suscipit sed a dolor. Sed dignissim risus leo, id convallis erat blandit vitae.</p>
-						<p><a href="javascript: void(0)" class="orange dark">Leia mais</a></p>
+<?php
+foreach($noticia as $noticiaItem):
+?>					<div class="col-xs-12 col-sm-6 noticia">
+						<img src="<?php echo $noticiaItem['thumbnail'] ?>" alt="<?php echo $noticiaItem['title'] ?>" class="img-responsive center-block" />
+						<h4><?php echo $noticiaItem['title'] ?></h4>
+						<p><small class="orange"><?php echo $noticiaItem['date'] ?> | <span class="orange dark"><?php echo $noticiaItem['category'] ?></span></small></p>
+						<p><?php echo $noticiaItem['content'] ?></p>
+						<p><a href="<?php echo $noticiaItem['link'] ?>" class="orange dark">Leia mais</a></p>
 					</div>
-					<div class="col-xs-12 col-sm-6 noticia">
-						<img src="<?php bloginfo('template_directory') ?>/images/home/foto-noticia.png" alt="Notícia" class="img-responsive center-block" />
-						<h4>Nullam non efficitur erat. Cras non nisi vitae ante ornare suscipit.</h4>
-						<p><small class="orange">11 de outubro de 2015 | <span class="orange dark">Projetos</span></small></p>
-						<p>Fusce venenatis venenatis vestibulum. Donec eu molestie enim. Nullam non efficitur erat. Cras non nisi vitae ante ornare suscipit sed a dolor. Sed dignissim risus leo, id convallis erat blandit vitae.</p>
-					</div>
+<?php
+endforeach;
+?>
 				</div>
 			</div>
 			<div id="home-content-widget" class="social-widget col-xs-12 col-sm-4">

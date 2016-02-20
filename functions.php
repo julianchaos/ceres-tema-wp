@@ -52,3 +52,5 @@ function ceres_scripts_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'ceres_scripts_styles' );
 
+add_theme_support( 'post-thumbnails' );
+add_image_size( 'noticia-thumbnail', 750, 262);

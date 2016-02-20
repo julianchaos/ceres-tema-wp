@@ -8,6 +8,15 @@ function arphabet_widgets_init() {
 		'before_widget' => '<div>',
 		'after_widget'  => '</div>'
 	));
+	
+	register_sidebar( array(
+		'name' => 'Social Content',
+		'id' => 'social_content',
+		'before_widget' => '<div>',
+		'after_widget' => '</div>',
+		'before_title' => '<h4>',
+		'after_title' => '</h4>'
+	));
 
 }
 add_action( 'widgets_init', 'arphabet_widgets_init' );

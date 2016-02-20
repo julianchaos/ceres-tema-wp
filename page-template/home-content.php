@@ -28,7 +28,7 @@
 				</div>
 			</div>
 			<div id="home-content-widget" class="social-widget col-xs-12 col-sm-4">
-				<?php get_template_part('page-template/social') ?>
+				<?php echo do_shortcode('[print_sidebar_social_content]') ?>
 			</div>
 		</div>
 	</div>

@@ -1,2 +1,2 @@
 <?php
-// Silence is golden.
+get_template_part('page-template/page_noticias');

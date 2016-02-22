@@ -15,7 +15,8 @@ if($query->have_posts())
 	{
 		$query->the_post();
 		$categories = get_the_category();
-		$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'noticia-thumbnail' )[0];
+		$thumbArray = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'noticia-thumbnail' );
+		$thumb = $thumbArray[0];
 
 		$noticia[] = array(
 			'title' => get_the_title(),

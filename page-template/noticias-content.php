@@ -5,7 +5,8 @@ query_posts("posts_per_page=2&paged=$paged");
 $noticias = array();
 while( have_posts() ) : the_post();
 	$categories = get_the_category();
-	$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'noticia-thumbnail' )[0];
+	$thumbArray = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'noticia-thumbnail' );
+	$thumb = $thumbArray[0];
 
 	$noticias[] = array(
 		'title' => get_the_title(),

@@ -1,5 +1,7 @@
 <?php
-query_posts('posts_per_page=2');
+$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
+query_posts("posts_per_page=2&paged=$paged");
+
 $noticias = array();
 while( have_posts() ) : the_post();
 	$categories = get_the_category();
@@ -24,7 +26,7 @@ foreach($noticias as $noticia) :
 ?>
 				<div class="noticia separator-bottom">
 					<h1 class="text-uppercase"><?php echo $noticia['title'] ?></h1>
-					<p><small class="orange"><?php echo $noticia['date'] ?> | <span class="orange dark"><?php echo $noticia['category'] ?></span></small></p>
+					<small class="orange"><?php echo $noticia['date'] ?> | <span class="orange dark"><?php echo $noticia['category'] ?></span></small>
 <?php
 	if(is_string($noticia['thumbnail'])):
 ?>
@@ -38,6 +40,14 @@ foreach($noticias as $noticia) :
 <?php
 endforeach;
 ?>
+				<div class="row">
+					<div class="col-xs-12 col-sm-6 previous-posts-link">
+						<?php echo previous_posts_link('postagens recentes'); ?>
+					</div>
+					<div class="col-xs-12 col-sm-6 next-posts-link">
+						<?php echo next_posts_link('postagens anteriores'); ?>
+					</div>
+				</div>
 			</div>
 			<div id="noticias-content-widget" class="social-widget col-xs-12 col-sm-4">
 				<?php echo do_shortcode('[print_sidebar_social_content]') ?>

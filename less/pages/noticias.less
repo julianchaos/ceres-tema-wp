@@ -1,0 +1,32 @@
+#noticias-content-main {
+	.noticia {
+		h1 {
+			margin-bottom: 15px;
+		}
+		img {
+			margin: 18px 0;
+		}
+		p:last-of-type {
+			margin-bottom: 40px;
+		}
+	}
+	
+	.previous-posts-link,
+	.next-posts-link {
+		text-align: center;
+		margin: 40px 0;
+		
+		a {
+			color: @orange-dark;
+		}
+	}
+	
+	@media (min-width: @screen-sm) {
+		.previous-posts-link {
+			text-align: left;
+		}
+		.next-posts-link {
+			text-align: right;
+		}
+	}
+}

@@ -49,7 +49,7 @@ foreach($noticia as $noticiaItem):
 ?>					<div class="col-xs-12 col-sm-6 noticia">
 						<img src="<?php echo $noticiaItem['thumbnail'] ?>" alt="<?php echo $noticiaItem['title'] ?>" class="img-responsive center-block" />
 						<h4><?php echo $noticiaItem['title'] ?></h4>
-						<p><small class="orange"><?php echo $noticiaItem['date'] ?> | <span class="orange dark"><?php echo $noticiaItem['category'] ?></span></small></p>
+						<small class="orange"><?php echo $noticiaItem['date'] ?> | <span class="orange dark"><?php echo $noticiaItem['category'] ?></span></small>
 						<p><?php echo $noticiaItem['content'] ?></p>
 						<p><a href="<?php echo $noticiaItem['link'] ?>" class="orange dark">Leia mais</a></p>
 					</div>

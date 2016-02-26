@@ -12,12 +12,15 @@ add_shortcode( 'print_footer_newsletter_form', 'printFooterNewsletterForm');
 
 function printSidebarSocialContent()
 {
+	$sidebar = "<div>";
+	
 	ob_start();
 	dynamic_sidebar('social_content');
-	$sidebar = ob_get_contents();
+	$sidebar .= ob_get_contents();
 	ob_end_clean();
 	
 	$sidebar .= printSocialContentNews();
+	$sidebar .= "</div>";
 	
 	return $sidebar;
 }

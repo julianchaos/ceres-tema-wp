@@ -129,9 +129,6 @@ header {
 
 			.navbar-collapse {
 				
-				@media (min-width: @screen-md) {
-					padding: 0;
-				}
 
 				.navbar-nav li a {
 					color: #ffffff;
@@ -175,13 +172,22 @@ header {
 				}
 				
 				@media (min-width: @screen-md) {
+					padding: 0;
+					
 					.dropdown-menu {
 						background-color:  rgba(0, 0, 0, 0.8);
 						border-top-width: 0;
+						padding: 0;
 						
 						li {
 							a {
 								line-height: 48px;
+								
+								&:hover,
+								&:focus {
+									background-color: transparent;
+									color: #4D654A;
+								}
 							}
 							
 							+ li {

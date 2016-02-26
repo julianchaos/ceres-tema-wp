@@ -3,6 +3,14 @@ footer {
 	
 	> .container > .row > div {
 		margin-top: 40px;
+		
+		&:last-of-type {
+			margin-bottom: 40px;
+		}
+		
+		@media (min-width: @screen-sm) {
+			margin-bottom: 40px;
+		}
 	}
 	
 	h4 {
@@ -21,6 +29,10 @@ footer {
 				float: right;
 			}
 		}
+		
+		&:last-of-type {
+			padding-bottom: 0;
+		}
 	}
 	
 	#footer-categorias {
@@ -34,6 +46,8 @@ footer {
 	
 	#footer-newsletter {
 		form {
+			margin-top: 30px;
+			
 			.form-control,
 			.btn {
 				border-radius: 1px;
@@ -55,15 +69,15 @@ footer {
 		
 		img {
 			display: block;
-			margin: 0 auto;
+			margin: 0 auto 25px;
 		}
 		
 		@media (min-width: @screen-sm) {
 			text-align: left;
 			
-			img {
+/*			img {
 				margin: 0;
-			}
+			}*/
 		}
 	}
 	

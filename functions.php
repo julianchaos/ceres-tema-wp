@@ -1,4 +1,6 @@
 <?php require_once 'inc/shortcodes/shortcodes.init.php' ?>
+<?php require_once 'inc/cpt.php' ?>
+<?php require_once 'inc/cpf.php' ?>
 <?php
 function arphabet_widgets_init() {
 
@@ -54,3 +56,4 @@ add_action( 'wp_enqueue_scripts', 'ceres_scripts_styles' );
 
 add_theme_support( 'post-thumbnails' );
 add_image_size( 'noticia-thumbnail', 750, 262);
+add_image_size( 'pesquisador-thumbnail', 170, 170, true);

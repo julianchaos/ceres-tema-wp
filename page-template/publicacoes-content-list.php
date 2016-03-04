@@ -21,7 +21,7 @@ while($query->have_posts())
 	);
 }
 ?>
-<section id="pesquisadores-content-list" class='interna-content-list'>
+<section id="publicacoes-content-list" class='interna-content-list'>
 	<div class="container">
 		<div class="row">
 <?php
@@ -33,7 +33,7 @@ foreach($lista as $item)
 					<div class="publicacao-content item-content">
 						<h4><?php echo $item['titulo'] ?></h4>
 						<?php echo $item['descricao'] ?>
-						<a href="<?php echo $item['arquivo'] ?>" class="download" download>Baixar arquivo</a>
+						<a href="<?php echo $item['arquivo'] ?>" class="download" download><i class="fa fa-download"></i> Baixar arquivo</a>
 					</div>
 				</div>
 			</div>

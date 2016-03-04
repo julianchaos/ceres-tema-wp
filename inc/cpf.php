@@ -65,3 +65,56 @@ if(function_exists("register_field_group"))
 		'menu_order' => 0,
 	));
 }
+
+if(function_exists("register_field_group"))
+{
+	register_field_group(array (
+		'id' => 'acf_publicacoes',
+		'title' => 'Publicações',
+		'fields' => array (
+			array (
+				'key' => 'field_56d8ed96d5dfb',
+				'label' => 'Categoria',
+				'name' => 'categoria',
+				'type' => 'select',
+				'required' => 1,
+				'choices' => array (
+					'livros' => 'Livros',
+					'artigos' => 'Artigos',
+					'dissertacoes' => 'Dissertações',
+					'teses' => 'Teses',
+				),
+				'default_value' => '',
+				'allow_null' => 0,
+				'multiple' => 0,
+			),
+			array (
+				'key' => 'field_56d8edd5d5dfc',
+				'label' => 'Arquivo da Publicação',
+				'name' => 'arquivo_da_publicacao',
+				'type' => 'file',
+				'required' => 1,
+				'save_format' => 'url',
+				'library' => 'uploadedTo',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'publicacao',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'default',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 0,
+	));
+}

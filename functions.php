@@ -40,9 +40,10 @@ function ceres_scripts_styles() {
 	//jQuery
 	wp_enqueue_script( 'jquery');
 	
-	//Google Fonts
+	//Google Fonts & Font Awesome
 	wp_enqueue_style( 'google-oswald', 'https://fonts.googleapis.com/css?family=Oswald:400,300');
 	wp_enqueue_style( 'google-opensans', 'https://fonts.googleapis.com/css?family=Open+Sans');
+	wp_enqueue_style( 'font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
 	
 	/*
 	 * Bootstrap

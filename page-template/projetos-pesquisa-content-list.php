@@ -16,16 +16,16 @@ while($query->have_posts())
 	);
 }
 ?>
-<section id="projetos-pesquisa-content-list">
+<section id="projetos-pesquisa-content-list" class='interna-content-list'>
 	<div class="container">
 		<div class="row">
 <?php
 foreach($lista as $item)
 {
 ?>
-			<div class="col-xs-12 projeto-pesquisa">
+			<div class="col-xs-12 projeto-pesquisa item">
 				<div class="separator-bottom">
-					<div class="projeto-pesquisa-content">
+					<div class="projeto-pesquisa-content item-content">
 						<h4><?php echo $item['titulo'] ?></h4>
 						<?php echo $item['descricao'] ?>
 					</div>

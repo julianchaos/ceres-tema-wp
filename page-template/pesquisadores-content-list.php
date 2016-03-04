@@ -28,19 +28,19 @@ while($query->have_posts())
 	);
 }
 ?>
-<section id="pesquisadores-content-list">
+<section id="pesquisadores-content-list" class='interna-content-list'>
 	<div class="container">
 		<div class="row">
 <?php
 foreach($lista as $item)
 {
 ?>
-			<div class="col-xs-12 pesquisador">
+			<div class="col-xs-12 pesquisador item">
 				<div class="separator-bottom">
 					<div class="pesquisador-foto">
 						<img src="<?php echo $item['thumb'] ?>" alt="<?php echo $item['titulo'] ?>" />
 					</div>
-					<div class="pesquisador-content">
+					<div class="pesquisador-content item-content">
 						<h4><?php echo $item['titulo'] ?><?php if(!is_null($item['linkedin']) || !is_null($item['curriculo-lattes'])) {
 							echo " | ";
 							echo $item['linkedin'];

@@ -84,6 +84,13 @@ header {
 					.screen-reader-text {
 						display: none;
 					}
+					
+					input {
+						&:focus,
+						&:active {
+							outline-width: 0;
+						}
+					}
 					.searchsubmit {
 						background: transparent url(../images/general/search.png) no-repeat 50% 50%;
 						border: 0;
@@ -124,6 +131,8 @@ header {
 							.placeholder;
 						}
 					}
+					
+					
 				}	
 			}
 

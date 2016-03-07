@@ -155,3 +155,108 @@ if(function_exists("register_field_group"))
 		'menu_order' => 0,
 	));
 }
+
+if(function_exists("register_field_group"))
+{
+	register_field_group(array (
+		'id' => 'acf_prestacoes-de-servicos',
+		'title' => 'Prestações de Serviços',
+		'fields' => array (
+			array (
+				'key' => 'field_56ddfcb78e57e',
+				'label' => 'Categoria',
+				'name' => 'categoria',
+				'type' => 'select',
+				'choices' => array (
+					'curso' => 'Curso',
+					'consultoria' => 'Consultoria',
+				),
+				'default_value' => '',
+				'allow_null' => 0,
+				'multiple' => 0,
+			),
+			array (
+				'key' => 'field_56ddfcdd8e57f',
+				'label' => 'Endereço',
+				'name' => 'endereco',
+				'type' => 'text',
+				'required' => 1,
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+			array (
+				'key' => 'field_56ddfce58e580',
+				'label' => 'Data',
+				'name' => 'data',
+				'type' => 'text',
+				'required' => 1,
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+			array (
+				'key' => 'field_56ddfcf38e581',
+				'label' => 'Valor',
+				'name' => 'valor',
+				'type' => 'text',
+				'required' => 1,
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+			array (
+				'key' => 'field_56ddfcfe8e582',
+				'label' => 'Telefone',
+				'name' => 'telefone',
+				'type' => 'text',
+				'required' => 1,
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+			array (
+				'key' => 'field_56ddfd108e583',
+				'label' => 'Observação',
+				'name' => 'observacao',
+				'type' => 'text',
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'prestacao-servico',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'default',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 0,
+	));
+}

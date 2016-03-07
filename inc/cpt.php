@@ -139,10 +139,10 @@ function cptui_register_my_cpts_prestacao_servico()
 		"capability_type" => "post",
 		"map_meta_cap" => true,
 		"hierarchical" => false,
-		"rewrite" => array( "slug" => "prestacao_servico", "with_front" => true ),
+		"rewrite" => array( "slug" => "prestacao-servico", "with_front" => true ),
 		"query_var" => true,
 				
 		"supports" => array( "title", "editor" ),				
 	);
-	register_post_type( "prestacao_servico", $args );
+	register_post_type( "prestacao-servico", $args );
 }

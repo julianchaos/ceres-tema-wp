@@ -118,3 +118,40 @@ if(function_exists("register_field_group"))
 		'menu_order' => 0,
 	));
 }
+
+if(function_exists("register_field_group"))
+{
+	register_field_group(array (
+		'id' => 'acf_dados',
+		'title' => 'Dados',
+		'fields' => array (
+			array (
+				'key' => 'dados_arquivo_dat',
+				'label' => 'Arquivo .dat',
+				'name' => 'arquivo_dat',
+				'type' => 'file',
+				'required' => 1,
+				'save_format' => 'url',
+				'library' => 'uploadedTo',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'dado',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'default',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 0,
+	));
+}

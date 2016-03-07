@@ -118,3 +118,31 @@ function cptui_register_my_cpts_dado()
 
 // End of cptui_register_my_cpts_publicacao()
 }
+
+add_action( 'init', 'cptui_register_my_cpts_prestacao_servico' );
+function cptui_register_my_cpts_prestacao_servico()
+{
+	$labels = array(
+		"name" => "Prestação de Serviços",
+		"singular_name" => "Prestação de Serviço",
+		);
+
+	$args = array(
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"show_ui" => true,
+		"show_in_rest" => false,
+		"has_archive" => false,
+		"show_in_menu" => true,
+		"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"rewrite" => array( "slug" => "prestacao_servico", "with_front" => true ),
+		"query_var" => true,
+				
+		"supports" => array( "title", "editor" ),				
+	);
+	register_post_type( "prestacao_servico", $args );
+}

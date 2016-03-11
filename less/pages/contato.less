@@ -25,3 +25,72 @@
 		}
 	}
 }
+
+#contato-mapa {
+	.col-xs-12 {
+		a {
+			display: block;
+			overflow: hidden;
+			width: 100%;
+			
+			img {
+				margin-left: -90px;
+				max-width: 250%;
+				width: 250%;
+				
+				@media (min-width: @screen-sm) {
+					width: 130%;
+				}
+				@media (min-width: @screen-md) {
+					margin-left: 0;
+					width: 100%;
+				}
+			}
+		}
+
+		.mapa-content {
+			@media (min-width: @screen-sm) {
+				background-color: rgba(0, 0, 0, 0.6);
+				padding: 1px;
+				width: 50%;
+				
+				position: absolute;
+				top: 0;
+				right: 15px;
+				bottom: 0;
+				
+			}
+			@media (min-width: @screen-md) {
+				width: 33.333%;
+			}
+
+			p {
+				margin: 0 40px 20px;
+				
+				@media (min-width: @screen-sm) {
+					color: #FFF;
+					margin: 0 60px 30px;
+				}
+				@media (min-width: @screen-lg) {
+					margin: 0 100px 30px 60px;
+				}
+
+				&:first-of-type {
+					margin-top: 20px;
+					
+					@media (min-width: @screen-sm) {
+						margin-top: 30px;
+					}
+					@media (min-width: @screen-lg) {
+						margin-top: 40px;
+					}
+				}
+
+				i.fa {
+					min-width: 20px;
+					margin-left: -25px;
+				}
+			}
+		}
+	}
+}

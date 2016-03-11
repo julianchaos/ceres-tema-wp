@@ -1,0 +1,27 @@
+#contato-formulario {
+	form {
+		input,
+		textarea {
+			.placeholder() {
+				font-style: italic;
+			}
+
+			&::-webkit-input-placeholder {
+				.placeholder;
+			}
+			&:-moz-placeholder {
+				.placeholder;
+			}
+			&::-moz-placeholder {
+				.placeholder;
+			}
+			&:-ms-input-placeholder {  
+				.placeholder;
+			}
+		}
+		
+		textarea {
+			height: 200px;
+		}
+	}
+}

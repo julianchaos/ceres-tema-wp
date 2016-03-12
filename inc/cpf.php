@@ -264,6 +264,47 @@ if(function_exists("register_field_group"))
 if(function_exists("register_field_group"))
 {
 	register_field_group(array (
+		'id' => 'acf_formulario-de-contato',
+		'title' => 'Formulário de contato',
+		'fields' => array (
+			array (
+				'key' => 'field_56e4215b7cbc2',
+				'label' => 'Formulário de contato',
+				'name' => 'formulario_de_contato',
+				'type' => 'acf_cf7',
+				'required' => 1,
+				'disable' => array (
+					0 => 0,
+				),
+				'allow_null' => 0,
+				'multiple' => 0,
+				'hide_disabled' => 0,
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'page_template',
+					'operator' => '==',
+					'value' => 'page-template/page_contato.php',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'default',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 0,
+	));
+}
+
+if(function_exists("register_field_group"))
+{
+	register_field_group(array (
 		'id' => 'acf_contato',
 		'title' => 'Contato',
 		'fields' => array (

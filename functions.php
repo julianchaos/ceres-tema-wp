@@ -1,3 +1,4 @@
+<?php require_once 'inc/advanced-custom-fields/init.php' ?>
 <?php require_once 'inc/shortcodes/shortcodes.init.php' ?>
 <?php require_once 'inc/cpt.php' ?>
 <?php require_once 'inc/cpf.php' ?>

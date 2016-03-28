@@ -151,6 +151,18 @@ header {
 					display: none;
 				}
 				
+				.dropdown-menu {
+					li {
+						a {
+							&:hover,
+							&:focus {
+								background-color: transparent;
+								color: #4D654A;
+							}							
+						}
+					}
+				}
+				
 				@media (max-width: @grid-float-breakpoint-max) {
 					.navbar-nav li {
 						a {
@@ -191,12 +203,6 @@ header {
 						li {
 							a {
 								line-height: 48px;
-								
-								&:hover,
-								&:focus {
-									background-color: transparent;
-									color: #4D654A;
-								}
 							}
 							
 							+ li {

@@ -1,7 +1,4 @@
 <?php
-$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
-query_posts("posts_per_page=2&paged=$paged");
-
 $noticias = array();
 while( have_posts() ) : the_post();
 	$categories = get_the_category();

@@ -56,6 +56,15 @@ function ceres_scripts_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'ceres_scripts_styles' );
 
+function alter_main_query($query)
+{
+	if($query->is_main_query())
+	{
+		$query->set('posts_per_page', 2);
+	}
+}
+add_action('pre_get_posts', 'alter_main_query');
+
 add_theme_support( 'post-thumbnails' );
 add_image_size( 'noticia-thumbnail', 750, 262);
 add_image_size( 'pesquisador-thumbnail', 170, 170, true);

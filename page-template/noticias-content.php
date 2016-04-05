@@ -9,6 +9,7 @@ while( have_posts() ) : the_post();
 		'title' => get_the_title(),
 		'date' => get_the_date('j \d\e F \d\e Y'),
 		'category' => $categories[0]->name,
+		'category-link' => get_category_link($categories[0]->term_id),
 		'thumbnail' => $thumb,
 		'content' => get_the_excerpt(),
 		'link' => get_permalink()
@@ -24,7 +25,7 @@ foreach($noticias as $noticia) :
 ?>
 				<div class="noticia separator-bottom">
 					<h1 class="text-uppercase"><?php echo $noticia['title'] ?></h1>
-					<small class="orange"><?php echo $noticia['date'] ?> | <span class="orange dark"><?php echo $noticia['category'] ?></span></small>
+					<small class="orange"><?php echo $noticia['date'] ?> | <a href="<?php echo $noticiaItem['category-link'] ?>" class="orange dark"><?php echo $noticia['category'] ?></a></small>
 <?php
 	if(is_string($noticia['thumbnail'])):
 ?>

@@ -11,7 +11,7 @@ $next_post = get_adjacent_post(false, '', false);
 			<div id="noticias-content-main" class="col-xs-12 col-sm-8 content-main">
 				<div class="noticia separator-bottom">
 					<h1 class="text-uppercase"><?php the_title() ?></h1>
-					<small class="orange"><?php the_date('j \d\e F \d\e Y') ?> | <span class="orange dark"><?php echo $categories[0]->name ?></span></small>
+					<small class="orange"><?php the_date('j \d\e F \d\e Y') ?> | <a href="<?php echo get_category_link($categories[0]->term_id) ?>" class="orange dark"><?php echo $categories[0]->name ?></a></small>
 <?php
 	if(is_string($thumbArray[0])):
 ?>

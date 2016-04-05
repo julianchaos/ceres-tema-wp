@@ -22,6 +22,7 @@ if($query->have_posts())
 			'title' => get_the_title(),
 			'date' => get_the_date('j \d\e F \d\e Y'),
 			'category' => $categories[0]->name,
+			'category-link' => get_category_link($categories[0]->term_id),
 			'thumbnail' => $thumb,
 			'content' => get_the_excerpt(),
 			'link' => get_permalink()
@@ -50,7 +51,7 @@ foreach($noticia as $noticiaItem):
 ?>					<div class="col-xs-12 col-sm-6 noticia">
 						<img src="<?php echo $noticiaItem['thumbnail'] ?>" alt="<?php echo $noticiaItem['title'] ?>" class="img-responsive center-block" />
 						<h4><?php echo $noticiaItem['title'] ?></h4>
-						<small class="orange"><?php echo $noticiaItem['date'] ?> | <span class="orange dark"><?php echo $noticiaItem['category'] ?></span></small>
+						<small class="orange"><?php echo $noticiaItem['date'] ?> | <a href="<?php echo $noticiaItem['category-link'] ?>" class="orange dark"><?php echo $noticiaItem['category'] ?></a></small>
 						<p><?php echo $noticiaItem['content'] ?></p>
 						<p><a href="<?php echo $noticiaItem['link'] ?>" class="orange dark">Leia mais</a></p>
 					</div>

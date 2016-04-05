@@ -24,12 +24,12 @@ endwhile;
 foreach($noticias as $noticia) :
 ?>
 				<div class="noticia separator-bottom">
-					<h1 class="text-uppercase"><?php echo $noticia['title'] ?></h1>
+					<h1 class="text-uppercase"><a href="<?php echo $noticia['link'] ?>"><?php echo $noticia['title'] ?></a></h1>
 					<small class="orange"><?php echo $noticia['date'] ?> | <a href="<?php echo $noticiaItem['category-link'] ?>" class="orange dark"><?php echo $noticia['category'] ?></a></small>
 <?php
 	if(is_string($noticia['thumbnail'])):
 ?>
-					<img src="<?php echo $noticia['thumbnail'] ?>" alt="<?php echo $noticia['title'] ?>" class="img-responsive center-block" />
+					<a href="<?php echo $noticia['link'] ?>"><img src="<?php echo $noticia['thumbnail'] ?>" alt="<?php echo $noticia['title'] ?>" class="img-responsive center-block" /></a>
 <?php
 	endif;
 ?>

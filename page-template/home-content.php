@@ -49,8 +49,8 @@ wp_reset_postdata();
 <?php
 foreach($noticia as $noticiaItem):
 ?>					<div class="col-xs-12 col-sm-6 noticia">
-						<img src="<?php echo $noticiaItem['thumbnail'] ?>" alt="<?php echo $noticiaItem['title'] ?>" class="img-responsive center-block" />
-						<h4><?php echo $noticiaItem['title'] ?></h4>
+						<a href="<?php echo $noticiaItem['link'] ?>"><img src="<?php echo $noticiaItem['thumbnail'] ?>" alt="<?php echo $noticiaItem['title'] ?>" class="img-responsive center-block" /></a>
+						<h4><a href="<?php echo $noticiaItem['link'] ?>"><?php echo $noticiaItem['title'] ?></a></h4>
 						<small class="orange"><?php echo $noticiaItem['date'] ?> | <a href="<?php echo $noticiaItem['category-link'] ?>" class="orange dark"><?php echo $noticiaItem['category'] ?></a></small>
 						<p><?php echo $noticiaItem['content'] ?></p>
 						<p><a href="<?php echo $noticiaItem['link'] ?>" class="orange dark">Leia mais</a></p>

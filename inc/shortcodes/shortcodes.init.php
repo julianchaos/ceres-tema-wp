@@ -40,11 +40,11 @@ function printSocialContentNews()
 			$noticia = array(
 				'date' => get_the_date('j \d\e F \d\e Y'),
 				'content' => get_the_excerpt(),
-				'link' => get_permalink()
+				'link' => get_permalink(),
 			);
 			
 			$output .= "<div class='separator-bottom'>"
-						. "<p>{$noticia['content']}</p>"
+						. "<p><a href='{$noticia['link']}'>{$noticia['content']}</a></p>"
 						. "<p class='date'><small class='orange'>{$noticia['date']}</small></p>"
 					. "</div>";
 		}

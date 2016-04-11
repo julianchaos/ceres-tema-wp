@@ -65,6 +65,12 @@ function alter_main_query($query)
 }
 add_action('pre_get_posts', 'alter_main_query');
 
+function retriveFileNameFromURL($url)
+{
+	$splitted = explode("/", $url);
+	return array_pop($splitted);
+}
+
 add_theme_support( 'post-thumbnails' );
 add_image_size( 'noticia-thumbnail', 750, 262);
 add_image_size( 'pesquisador-thumbnail', 170, 170, true);

@@ -10,12 +10,43 @@ while($query->have_posts())
 {
 	$query->the_post();
 	
-	$arquivoDat = get_post_meta($post->ID, 'arquivo_dat', true);
+	$arquivos = array();
+	
+	if(have_rows('arquivos_locais'))
+	{
+		while( have_rows('arquivos_locais'))
+		{
+			the_row();
+			
+			$local = get_sub_field('arquivo_local');
+			$name = retriveFileNameFromURL($local['url']);
+			
+			$arquivos[] = array(
+				'tipo' => 'local',
+				'url' => $local['url'],
+				'name' => $name
+			);
+		}
+	}
+	
+	if(have_rows('arquivos_remotos'))
+	{
+		while( have_rows('arquivos_remotos') )
+		{
+			the_row();
+			
+			$arquivos[] = array(
+				'tipo' => 'remoto',
+				'url' => get_sub_field('url'),
+				'name' => get_sub_field('titulo')
+			);
+		}
+	}
 	
 	$lista[] = array(
 		'titulo' => get_the_title(),
 		'descricao' => get_the_content(),
-		'arquivo' => $arquivoDat
+		'arquivos' => $arquivos
 	);
 }
 ?>
@@ -31,7 +62,14 @@ foreach($lista as $item)
 					<div class="dado-content item-content">
 						<h4><?php echo $item['titulo'] ?></h4>
 						<?php echo $item['descricao'] ?>
-						<a href="<?php echo $item['arquivo'] ?>" class="download" download><i class="fa fa-download"></i> Baixar arquivo .dat</a>
+<?php
+	foreach($item['arquivos'] as $arquivo)
+	{
+?>
+						<a href="<?php echo $arquivo['url'] ?>" class="download" download><i class="fa fa-<?php echo ($arquivo['tipo'] === 'local' ? 'download' : 'external-link') ?>"></i>Baixar <?php echo $arquivo['name'] ?></a>
+<?php
+	}
+?>
 					</div>
 				</div>
 			</div>

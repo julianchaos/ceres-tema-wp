@@ -58,7 +58,7 @@ add_action( 'wp_enqueue_scripts', 'ceres_scripts_styles' );
 
 function alter_main_query($query)
 {
-	if($query->is_main_query())
+	if( $query->is_main_query() && !(is_admin()) )
 	{
 		$query->set('posts_per_page', 2);
 	}

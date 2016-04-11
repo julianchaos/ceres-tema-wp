@@ -27,8 +27,8 @@
 								Centro para o Estudo da Riqueza e da Estratificação Social<br />
 							</p>
 							<p>
-								Contato: <br />
-								Tel.: +55 (21) 2266-8364
+								Tel.: +55 (21) 2266-8364 <br />
+								Email: <a href='mailto: ceres@iesp.uerj.br'>ceres@iesp.uerj.br</a>
 							</p>
 						</div>
 					</div>

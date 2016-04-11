@@ -1,4 +1,5 @@
 <?php
+//Pesquisadores
 if(function_exists("register_field_group"))
 {
 	register_field_group(array (
@@ -66,6 +67,7 @@ if(function_exists("register_field_group"))
 	));
 }
 
+//Publicações
 if(function_exists("register_field_group"))
 {
 	register_field_group(array (
@@ -119,6 +121,7 @@ if(function_exists("register_field_group"))
 	));
 }
 
+//Dados
 if(function_exists("register_field_group"))
 {
 	register_field_group(array (
@@ -156,6 +159,7 @@ if(function_exists("register_field_group"))
 	));
 }
 
+//Prestações de Serviços
 if(function_exists("register_field_group"))
 {
 	register_field_group(array (
@@ -261,6 +265,7 @@ if(function_exists("register_field_group"))
 	));
 }
 
+//Formulário de contato
 if(function_exists("register_field_group"))
 {
 	register_field_group(array (
@@ -302,6 +307,7 @@ if(function_exists("register_field_group"))
 	));
 }
 
+//Contato
 if(function_exists("register_field_group"))
 {
 	register_field_group(array (

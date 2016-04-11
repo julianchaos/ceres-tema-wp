@@ -12,12 +12,30 @@ while($query->have_posts())
 {
 	$query->the_post();
 	
-	$publicacao = get_post_meta($post->ID, 'arquivo_da_publicacao', true);
+	if(get_field('tipo_arquivo') === 'local')
+	{
+		$objeto = get_field('arquivo_local');
+		
+		$url = $objeto['url'];
+		$name = retriveFileNameFromURL($url);
+	}
+	else
+	{
+		$name = get_field('titulo_arquivo_remoto');
+		$url = get_field('url_arquivo_remoto');
+	}
+	
+	
+	$arquivo = array(
+		'tipo' => get_field('tipo_arquivo'),
+		'url' => $url,
+		'name' => $name
+	);
 	
 	$lista[] = array(
 		'titulo' => get_the_title(),
 		'descricao' => get_the_content(),
-		'arquivo' => $publicacao
+		'arquivo' => $arquivo
 	);
 }
 ?>
@@ -33,7 +51,7 @@ foreach($lista as $item)
 					<div class="publicacao-content item-content">
 						<h4><?php echo $item['titulo'] ?></h4>
 						<?php echo $item['descricao'] ?>
-						<a href="<?php echo $item['arquivo'] ?>" class="download" download><i class="fa fa-download"></i> Baixar arquivo</a>
+						<a href="<?php echo $item['arquivo']['url'] ?>" class="download" <?php echo $item['arquivo']['tipo'] === 'local' ? 'download' : "target='_blank'" ?>><i class="fa fa-<?php echo ($item['arquivo']['tipo'] === 'local' ? 'download' : 'external-link') ?>"></i><?php echo $item['arquivo']['tipo'] === 'local' ? 'Baixar' : 'Acessar' ?> <?php echo $item['arquivo']['name'] ?></a>
 					</div>
 				</div>
 			</div>

@@ -66,7 +66,7 @@ foreach($lista as $item)
 	foreach($item['arquivos'] as $arquivo)
 	{
 ?>
-						<a href="<?php echo $arquivo['url'] ?>" class="download" download><i class="fa fa-<?php echo ($arquivo['tipo'] === 'local' ? 'download' : 'external-link') ?>"></i>Baixar <?php echo $arquivo['name'] ?></a>
+						<a href="<?php echo $arquivo['url'] ?>" class="download" <?php echo $arquivo['tipo'] === 'local' ? 'download' : "target='_blank'" ?>><i class="fa fa-<?php echo ($arquivo['tipo'] === 'local' ? 'download' : 'external-link') ?>"></i><?php echo $arquivo['tipo'] === 'local' ? 'Baixar' : 'Acessar' ?> <?php echo $arquivo['name'] ?></a>
 <?php
 	}
 ?>

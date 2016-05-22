@@ -109,8 +109,8 @@ if(function_exists("register_field_group"))
 				'choices' => array (
 					'livros' => 'Livros',
 					'artigos' => 'Artigos',
-					'dissertacoes' => 'Dissertações',
-					'teses' => 'Teses',
+					'dissertacoes' => 'Dissertações e Teses',
+//					'teses' => 'Teses',
 				),
 				'default_value' => '',
 				'allow_null' => 0,

@@ -14,6 +14,7 @@ if(function_exists("register_field_group"))
 				'choices' => array (
 					'pesquisador' => 'Pesquisador',
 					'assistente' => 'Pesquisador Assistente',
+					'associado' => 'Associados'
 				),
 				'default_value' => '',
 				'allow_null' => 0,

@@ -15,9 +15,9 @@
 					<p class="telefone">
 						<i class="fa fa-phone"></i> Tel.: <?php the_field('telefone') ?>
 					</p>
-					<p class="fax">
+<!--					<p class="fax">
 						<i class="fa fa-fax"></i> Fax: <?php the_field('fax') ?>
-					</p>
+					</p>-->
 				</div>
 			</div>
 		</div>

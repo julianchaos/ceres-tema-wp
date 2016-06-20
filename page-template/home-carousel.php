@@ -1,18 +1,66 @@
+<?php
+$args = array(
+	'post_type' => 'item-slider',
+	'posts_per_page' => -1,
+);
+$query = new WP_Query($args);
+
+$lista = array();
+while($query->have_posts())
+{
+	$query->the_post();
+	
+	$tipoLink = get_post_meta($post->ID, 'tipo_de_link', true);
+	switch ($tipoLink) {
+		case 'interna':
+			$link = get_permalink(get_post_meta($post->ID, 'pagina_interna', true));
+			break;
+
+		case 'externa' : 
+			$link = get_post_meta($post->ID, 'pagina_externa', true);
+			break;
+	}
+	
+	$lista[] = array(
+		'titulo' => get_the_title(),
+		'descricao' => get_the_content(),
+		'link' => $link
+	);
+}
+?>
 <section id="home-carousel">
 	<div id="carousel-main" class="carousel slide" data-ride="carousel">
 		<!-- Indicators -->
 		<ol class="carousel-indicators">
-			<li data-target="#carousel-main" data-slide-to="0" class="active"></li>
+<?php
+$index = 0;
+foreach($lista as $item)
+{ ?>
+			<li data-target='#carousel-main' data-slide-to='<?php echo $index ?>' class="<?php echo $index === 0 ? 'active' : null ?>"></li>
+	
+<?php
+	$index++;
+}
+?>
 		</ol>
 
 		<!-- Wrapper for slides -->
 		<div class="carousel-inner" role="listbox">
-			<div class="item active">
+<?php
+$index = 0;
+foreach($lista as $item)
+{ ?>
+			<div class="item <?php echo $index === 0 ? 'active' : null ?>">
 				<div class="carousel-caption">
-					<h1>Novas Publicações</h1>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis sodales arcu. Nullam mattis ligula in sagittis tincidunt. Sed eleifend orci mauris, sed aliquam purus dignissim id.</p>
+				
+					<a href="<?php echo $item['link'] ?>"><h1><?php echo $item['titulo'] ?></h1> 
+						<p><?php echo $item['descricao'] ?></p></a>
+					
 				</div>
 			</div>
+<?php
+	$index++;
+} ?>
 		</div>
 
 		<!-- Controls -->

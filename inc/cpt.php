@@ -1,4 +1,32 @@
 <?php
+add_action( 'init', 'cptui_register_my_cpts_item_slider' );
+function cptui_register_my_cpts_item_slider()
+{
+	$labels = array(
+		"name" => "Itens do Slider",
+		"singular_name" => "Item do Slider",
+		);
+
+	$args = array(
+		"labels" => $labels,
+		"description" => "Itens do slider da home.",
+		"public" => true,
+		"show_ui" => true,
+		"show_in_rest" => false,
+		"has_archive" => false,
+		"show_in_menu" => true,
+		"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"rewrite" => array( "slug" => "item-slider", "with_front" => true ),
+		"query_var" => true,
+								
+	);
+	register_post_type( "item-slider", $args );
+
+// End of cptui_register_my_cpts_item_slider()
+}
 
 add_action('init', 'cptui_register_my_cpts_pesquisador');
 function cptui_register_my_cpts_pesquisador()

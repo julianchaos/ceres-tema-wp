@@ -1,4 +1,105 @@
 <?php
+//Sliders da Home
+if(function_exists("register_field_group"))
+{
+	register_field_group(array (
+		'id' => 'acf_slider-da-home',
+		'title' => 'Slider da Home',
+		'fields' => array (
+			array (
+				'key' => 'field_57683ac2af801',
+				'label' => 'Tipo de Link',
+				'name' => 'tipo_de_link',
+				'type' => 'select',
+				'choices' => array (
+					'interna' => 'Página interna',
+					'externa' => 'Página externa',
+					'' => '',
+				),
+				'default_value' => '',
+				'allow_null' => 0,
+				'multiple' => 0,
+			),
+			array (
+				'key' => 'field_57683af7af802',
+				'label' => 'Página Externa',
+				'name' => 'pagina_externa',
+				'type' => 'text',
+				'instructions' => 'URL da página à qual o slide vai ser direcionado',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_57683ac2af801',
+							'operator' => '==',
+							'value' => 'externa',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+			array (
+				'key' => 'field_57683bdaaf803',
+				'label' => 'Página Interna',
+				'name' => 'pagina_interna',
+				'type' => 'page_link',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_57683ac2af801',
+							'operator' => '==',
+							'value' => 'interna',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'post_type' => array (
+					0 => 'page',
+				),
+				'allow_null' => 0,
+				'multiple' => 0,
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'item-slider',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'default',
+			'hide_on_screen' => array (
+				0 => 'permalink',
+				1 => 'excerpt',
+				2 => 'custom_fields',
+				3 => 'discussion',
+				4 => 'comments',
+				5 => 'slug',
+				6 => 'author',
+				7 => 'format',
+				8 => 'featured_image',
+				9 => 'categories',
+				10 => 'tags',
+				11 => 'send-trackbacks',
+			),
+		),
+		'menu_order' => 0,
+	));
+}
+
 //Pesquisadores
 if(function_exists("register_field_group"))
 {
